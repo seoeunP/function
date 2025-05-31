@@ -4,12 +4,12 @@ public class RoomParticipant {
     private int id;
     private int roomId;
     private String username;
-    private String jitsiRoomName;
+    private String RoomName;
 
-    public RoomParticipant(int roomId, String username, String jitsiRoomName) {
+    public RoomParticipant(int roomId, String username, String RoomName) {
         this.roomId = roomId;
         this.username = username;
-        this.jitsiRoomName = jitsiRoomName;
+        this.RoomName = RoomName;
     }
 
     // Getters and Setters
@@ -37,11 +37,11 @@ public class RoomParticipant {
         this.username = username;
     }
 
-    public String getJitsiRoomName() {
-        return jitsiRoomName;
+    public String getRoomName() {
+        return RoomName;
     }
 
-    public void setJitsiRoomName(String jitsiRoomName) {
-        this.jitsiRoomName = jitsiRoomName;
+    public void setRoomName(String RoomName) {
+        this.RoomName = RoomName;
     }
 }

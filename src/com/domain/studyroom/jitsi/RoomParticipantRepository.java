@@ -10,13 +10,13 @@ public class RoomParticipantRepository {
     /**
      * 방 참가자 추가
      */
-    public void addParticipant(int roomId, String username, String jitsiRoomName) throws SQLException {
+    public void addParticipant(int roomId, String username, String RoomName) throws SQLException {
         String sql = "INSERT INTO room_participants (room_id, username, jitsi_room_name) VALUES (?, ?, ?)";
         try (Connection conn = DB.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, roomId);
             ps.setString(2, username);
-            ps.setString(3, jitsiRoomName);
+            ps.setString(3, RoomName);
             ps.executeUpdate();
         }
     }
