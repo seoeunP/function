@@ -7,8 +7,8 @@ import java.util.List;
 public class TodoStorage {
     private Connection getConnection() throws SQLException, ClassNotFoundException {
         String url = "jdbc:mysql://localhost:3306/java_studyroom_project?serverTimezone=UTC&characterEncoding=UTF-8";
-        String user = "root";
-        String pass = "0107";
+        String user = "";
+        String pass = "";
         Class.forName("com.mysql.cj.jdbc.Driver");
         return DriverManager.getConnection(url, user, pass);
     }
