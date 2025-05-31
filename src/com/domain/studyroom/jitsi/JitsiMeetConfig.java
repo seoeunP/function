@@ -2,7 +2,6 @@ package com.domain.studyroom.jitsi;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonArray;
-import java.util.UUID;
 
 public class JitsiMeetConfig {
 
@@ -10,18 +9,18 @@ public class JitsiMeetConfig {
 
     /**
      * Jitsi Meet 설정 생성
-     * @param roomName 방 이름
+     * @param roomName 사용자가 입력한 방 이름
      * @param username 사용자 이름
      * @return Jitsi Meet 설정 JSON
      */
     public static JsonObject createConfig(String roomName, String username) {
         JsonObject config = new JsonObject();
 
-        // 랜덤 Jitsi 방 이름 생성 (고유성 보장)
-        String jitsiRoomName = "StudyRoom_" + roomName.replaceAll("\\s", "_") + "_" + UUID.randomUUID().toString().substring(0, 8);
+        // 사용자가 입력한 방 이름 사용 (공백을 언더스코어로 변경)
+        String RoomName = roomName.replaceAll("\\s", "_");
 
         config.addProperty("domain", JITSI_DOMAIN);
-        config.addProperty("roomName", jitsiRoomName);
+        config.addProperty("roomName", RoomName);
 
         // 사용자 정보
         JsonObject userInfo = new JsonObject();
@@ -65,15 +64,15 @@ public class JitsiMeetConfig {
 
     /**
      * 기존 Jitsi 방에 참가하기 위한 설정
-     * @param jitsiRoomName 기존 Jitsi 방 이름
+     * @param roomName 기존 방 이름
      * @param username 사용자 이름
      * @return Jitsi Meet 설정 JSON
      */
-    public static JsonObject createConfigForExistingRoom(String jitsiRoomName, String username) {
+    public static JsonObject createConfigForExistingRoom(String roomName, String username) {
         JsonObject config = new JsonObject();
 
         config.addProperty("domain", JITSI_DOMAIN);
-        config.addProperty("roomName", jitsiRoomName);
+        config.addProperty("roomName", roomName);
 
         // 사용자 정보
         JsonObject userInfo = new JsonObject();
