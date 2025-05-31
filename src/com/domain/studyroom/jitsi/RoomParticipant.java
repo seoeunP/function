@@ -1,4 +1,4 @@
-package com.domain.studyroom.rooms;
+package com.domain.studyroom.jitsi;
 
 public class RoomParticipant {
     private int id;
