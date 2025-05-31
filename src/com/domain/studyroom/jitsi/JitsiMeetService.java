@@ -1,5 +1,6 @@
-package com.domain.studyroom.rooms;
+package com.domain.studyroom.jitsi;
 
+import com.domain.studyroom.rooms.RoomRepository;
 import com.google.gson.JsonObject;
 
 import java.sql.SQLException;
